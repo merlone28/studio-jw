@@ -1,0 +1,55 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f4f6fa; --card: #fff; --testo: #1b2430; --tenue: #5d6877;
+  --accento: #1e4e8c; --su-accento: #fff; --bordo: #d5dbe5; --avviso: #fff4d6; --avviso-testo: #5a4300;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11161d; --card: #1a222d; --testo: #e8edf4; --tenue: #9aa6b6;
+    --accento: #6aa3ea; --su-accento: #0c1522; --bordo: #2d3846; --avviso: #3a3014; --avviso-testo: #f1dd9c;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--testo);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh; display: flex; flex-direction: column;
+}
+header, main, footer { width: 100%; max-width: 40rem; margin: 0 auto; padding: 0 16px; }
+header { padding-top: 20px; }
+h1 { margin: 0 0 12px; font-size: 1.4rem; color: var(--accento); }
+h2 { font-size: 1rem; margin: 0; }
+form { display: flex; gap: 8px; }
+input[type=search] {
+  flex: 1; min-width: 0; font: inherit; font-size: 1.15rem; padding: 14px 16px;
+  border: 2px solid var(--bordo); border-radius: 12px; background: var(--card); color: var(--testo);
+}
+input[type=search]:focus { outline: none; border-color: var(--accento); }
+button { font: inherit; cursor: pointer; }
+form button {
+  padding: 0 20px; border: 0; border-radius: 12px; background: var(--accento); color: var(--su-accento); font-weight: 600;
+}
+main { flex: 1; padding-bottom: 24px; }
+.muted { color: var(--tenue); }
+#esito { margin: 16px 0 4px; }
+.tipo { display: inline-block; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--accento); }
+.titolo { font-size: 1.3rem; font-weight: 700; margin: 2px 0 0; overflow-wrap: anywhere; }
+.nota { margin: 10px 0 0; padding: 10px 12px; border-radius: 10px; background: var(--avviso); color: var(--avviso-testo); }
+.sezione { margin-top: 20px; }
+.sezione h2 { color: var(--tenue); font-size: .85rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
+.btn {
+  display: block; position: relative; padding: 14px 40px 14px 16px; margin-bottom: 8px; background: var(--card); color: var(--testo);
+  border: 1px solid var(--bordo); border-radius: 12px; text-decoration: none; font-weight: 600;
+}
+.btn:hover, .btn:focus-visible { border-color: var(--accento); outline: none; }
+.btn small { display: block; font-weight: 400; color: var(--tenue); }
+.btn::after { content: "↗"; position: absolute; right: 16px; top: 14px; color: var(--accento); }
+#cronologia { margin-top: 28px; }
+.riga { display: flex; justify-content: space-between; align-items: center; }
+.link { background: none; border: 0; color: var(--accento); padding: 8px 0 8px 12px; text-decoration: underline; }
+#lista { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+#lista button {
+  padding: 8px 14px; border: 1px solid var(--bordo); border-radius: 999px; background: var(--card); color: var(--testo);
+}
+footer { padding-top: 12px; padding-bottom: 20px; text-align: center; color: var(--tenue); font-size: .85rem; }
+footer p { margin: 0; }

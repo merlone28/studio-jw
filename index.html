@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studio JW</title>
+  <meta name="description" content="Collegamenti rapidi a jw.org e wol.jw.org per argomenti e scritture.">
+  <meta name="theme-color" content="#1e4e8c">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Studio JW</h1>
+    <form id="form" role="search" autocomplete="off">
+      <input id="q" type="search" name="q" placeholder="Es. perdono, Gv 3:16" aria-label="Argomento o scrittura" enterkeyhint="search" autocapitalize="none" spellcheck="false">
+      <button type="submit">Cerca</button>
+    </form>
+  </header>
+
+  <main>
+    <p id="intro" class="muted">Scrivi un argomento (<em>perdono</em>) o una scrittura (<em>Romani 8:28-30</em>, <em>1Pt 5:7</em>): ti preparo i collegamenti a jw.org e alla Biblioteca online.</p>
+    <div id="esito" hidden></div>
+    <div id="risultati"></div>
+
+    <section id="cronologia" hidden>
+      <div class="riga">
+        <h2>Ricerche recenti</h2>
+        <button type="button" id="cancella" class="link">Cancella</button>
+      </div>
+      <ul id="lista"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Strumento non ufficiale. Tutti i contenuti appartengono a jw.org</p>
+  </footer>
+
+  <script src="scritture.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
