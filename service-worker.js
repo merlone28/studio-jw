@@ -1,5 +1,5 @@
 // Cache solo dei file dell'app. Cambia VERSIONE quando modifichi un file, così i telefoni si aggiornano.
-const VERSIONE = 'studio-jw-v2';
+const VERSIONE = 'studio-jw-v3';
 const FILE = ['./', 'index.html', 'style.css', 'scritture.js', 'app.js', 'manifest.json', 'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png'];
 
 self.addEventListener('install', e => {

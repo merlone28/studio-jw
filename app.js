@@ -36,16 +36,18 @@
 
     const scrittura = r.tipo === 'scrittura';
     esito.replaceChildren(
-      el('span', { className: 'tipo', textContent: scrittura ? 'Scrittura' : 'Argomento' }),
+      el('span', { className: 'tipo' + (scrittura ? '' : ' argomento'), textContent: scrittura ? 'Scrittura' : 'Argomento' }),
       el('p', { className: 'titolo', textContent: scrittura ? r.etichetta : r.testo }),
       ...(r.nota ? [el('p', { className: 'nota', role: 'status', textContent: r.nota })] : [])
     );
-    out.replaceChildren(...(scrittura ? linkScrittura(r) : linkArgomento(r)).map(s =>
-      el('section', { className: 'sezione' },
+    out.replaceChildren(...(scrittura ? linkScrittura(r) : linkArgomento(r)).map((s, i) => {
+      const sez = el('section', { className: 'sezione' },
         el('h2', { textContent: s.titolo }),
-        ...s.link.map(l => el('a', { className: 'btn', href: l.url, target: '_blank', rel: 'noopener noreferrer' },
-          l.testo, ...(l.desc ? [el('small', { textContent: l.desc })] : []))))
-    ));
+        ...s.link.map((l, j) => el('a', { className: 'btn' + (scrittura && !i && !j ? ' primario' : ''), href: l.url, target: '_blank', rel: 'noopener noreferrer' },
+          l.testo, ...(l.desc ? [el('small', { textContent: l.desc })] : []))));
+      sez.style.setProperty('--i', i + 1); // ritardo a cascata dell'animazione
+      return sez;
+    }));
 
     const chiave = (scrittura ? r.etichetta : r.testo);
     scrivi([chiave, ...leggi().filter(t => t.toLowerCase() !== chiave.toLowerCase())].slice(0, MAX));

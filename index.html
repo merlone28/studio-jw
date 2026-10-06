@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Studio JW</title>
   <meta name="description" content="Collegamenti rapidi a jw.org e wol.jw.org per argomenti e scritture.">
-  <meta name="theme-color" content="#1e4e8c">
+  <meta name="theme-color" content="#f7f6f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#191919" media="(prefers-color-scheme: dark)">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
@@ -14,6 +15,7 @@
 <body>
   <header>
     <h1>Studio JW</h1>
+    <p class="sottotitolo">Collegamenti diretti a jw.org e alla Biblioteca online per ogni argomento o scrittura.</p>
     <form id="form" role="search" autocomplete="off">
       <input id="q" type="search" name="q" placeholder="Es. perdono, Gv 3:16" aria-label="Argomento o scrittura" enterkeyhint="search" autocapitalize="none" spellcheck="false">
       <button type="submit">Cerca</button>
@@ -21,7 +23,7 @@
   </header>
 
   <main>
-    <p id="intro" class="muted">Scrivi un argomento (<em>perdono</em>) o una scrittura (<em>Romani 8:28-30</em>, <em>1Pt 5:7</em>): ti preparo i collegamenti a jw.org e alla Biblioteca online.</p>
+    <p id="intro" class="tenue">Prova con un argomento, come <em>perdono</em>, o con una scrittura, come <em>Romani 8:28-30</em> o <em>1Pt 5:7</em>.</p>
     <div id="esito" hidden></div>
     <div id="risultati"></div>
 
